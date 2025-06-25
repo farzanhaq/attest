@@ -66,6 +66,8 @@ export async function run(inputs: RunInputs): Promise<void> {
     const outputPath = path.join(tempDir(), ATTESTATION_FILE_NAME)
     core.setOutput('bundle-path', outputPath)
 
+    console.log('TEST 1');
+
     const att = await createAttestation(subjects, predicate, {
       sigstoreInstance,
       pushToRegistry: inputs.pushToRegistry,

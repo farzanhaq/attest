@@ -27,10 +27,13 @@ export const createAttestation = async (
     sigstore: opts.sigstoreInstance,
     token: opts.githubToken
   })
+  console.log('TEST 2');
 
   const result: AttestResult = attestation
 
   if (subjects.length === 1 && opts.pushToRegistry) {
+    console.log('Attestation:', attestation);
+
     const subject = subjects[0]
     const credentials = getRegistryCredentials(subject.name)
     const artifact = await attachArtifactToImage({
